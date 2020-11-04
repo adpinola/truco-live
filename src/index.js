@@ -1,3 +1,3 @@
-import { TrucoLive } from './TrucoLive.js'
+import { TrucoLive } from './TrucoLive.js';
 
-customElements.define('truco-live', TrucoLive)
+customElements.define('truco-live', TrucoLive);

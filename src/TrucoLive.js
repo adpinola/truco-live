@@ -1,10 +1,10 @@
-import { LitElement, html, css } from 'lit-element'
+import { LitElement, html, css } from 'lit-element';
 
 export class TrucoLive extends LitElement {
   static get properties() {
     return {
       id: { type: String },
-    }
+    };
   }
 
   static get styles() {
@@ -20,12 +20,12 @@ export class TrucoLive extends LitElement {
         margin: 0;
         padding: 0;
       }
-    `
+    `;
   }
 
   constructor() {
-    super()
-    this.id = ''
+    super();
+    this.id = '';
   }
 
   render() {
@@ -33,6 +33,6 @@ export class TrucoLive extends LitElement {
       <div id="main">
         <h1>Truco Live</h1>
       </div>
-    `
+    `;
   }
 }

@@ -5,4 +5,4 @@ module.exports = {
   appIndex: 'index.html',
   plugins: [],
   moduleDirs: ['node_modules'],
-}
+};
