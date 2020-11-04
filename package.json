@@ -1,0 +1,34 @@
+{
+  "name": "truco-live",
+  "version": "1.0.0",
+  "description": "WebRTC Truco - Play it, for real.",
+  "main": "index.js",
+  "scripts": {
+    "lint:eslint": "eslint",
+    "format:eslint": "eslint --fix",
+    "lint:prettier": "prettier \"**/*.js\" --check",
+    "format:prettier": "prettier \"**/*.js\" --write",
+    "linter": "npm run lint:eslint & npm run lint:prettier",
+    "format": "npm run format:eslint && npm run format:prettier",
+    "test": "jest",
+    "start": "es-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adpinola/truco-live.git"
+  },
+  "author": "adpinola",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adpinola/truco-live/issues"
+  },
+  "homepage": "https://github.com/adpinola/truco-live#readme",
+  "devDependencies": {
+    "es-dev-server": "^1.57.8",
+    "eslint": "^7.12.1",
+    "prettier": "^2.1.2"
+  },
+  "dependencies": {
+    "lit-element": "^2.4.0"
+  }
+}
