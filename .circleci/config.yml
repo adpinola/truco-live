@@ -1,40 +1,27 @@
-# CicleCI Configuration File
-version: 2
-jobs:
-  prebuild:
-    docker:
-    - image: cypress/base:10
-      environment:
-      TERM: xterm
-    steps:
-    - checkout
-    - restore_cache:
-        keys:
-          - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
-          - v1-deps-{{ .Branch }}
-          - v1-deps
-    - run:
-        name: Installing NPM packages
-        command: npm ci
-        working_directory: ~/project
-    - save_cache:
-        key: node-deps-v1-{{ .Branch }}-{{ checksum "~/project/package-lock.json" }}
-        paths:
-          - ~/.npm
-    - run:
-        command: npm run linter
-        name: Checking formatting styles...
-        working_directory: ~/project      
-    - run:
-        command: npm run start:test & npx wait-on http://localhost:8000/
-        name: Starting server for tests
-        working_directory: ~/project             
-    - run:
-        command: npm run cypress:all
-        name: Run all cypress tests
-        working_directory: ~/project
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1
 workflows:
-  integration:
+  build:
     jobs:
-    - prebuild
-  version: 2
+      # first, run a single job to install dependencies and Cypress
+      # and perform a few more small steps like linting
+      - cypress/install:
+          name: Install
+          post-steps:
+            - run:
+                name: Check formatting styles
+                command: npm run linter
+
+      # reuse the workspace from the install job
+      # to run end-to-end tests in Electron browser
+      - cypress/run:
+          name: Electron test
+          command: npm run cypress:all
+          requires:
+            - Install
+          install-command: echo 'Nothing to install in this job'
+          # to run tests, we need to start the web application
+          start: npm run start:test
+          wait-on: 'http://localhost:8000'
+          no-workspace: true
