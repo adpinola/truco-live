@@ -9,10 +9,6 @@ module.exports = {
   watch: true,
   nodeResolve: true,
   appIndex: 'index.html',
-  plugins: [
-    wrapRollupPlugin(commonjs()),
-    wrapRollupPlugin(replace(envVariables)),
-    litcss(),
-  ],
+  plugins: [wrapRollupPlugin(commonjs()), wrapRollupPlugin(replace(envVariables)), litcss()],
   babel: true,
 };

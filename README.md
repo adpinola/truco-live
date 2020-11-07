@@ -91,15 +91,6 @@ npm run cypress:all
 
 You will get every result directly in the terminal. This command is useful for automatic tests prior to automatic deploys (as used in the `amplify.yml` file), but you can execute is as a normal npm script too.
 
-To run the tests and generate an HTML report, run the following
-
-```bash
-npm run cypress:headless
-```
-
-In addition to getting all the results directly in the terminal, it will also generate the coverage reports, located on `/coverage/lcov-report`
-
-
 NOTE: Before `npm run cypress:test`, it's very important to have Cypress installed via `npm install` because that is not going to only install it in the project: it will also generate files in your system (if there was not a previous installation). If you try to open Cypress before installing it, you'll maybe get errors when installing and then opening it again. To fix this, follow these steps:
 
 - On Windows
@@ -123,6 +114,7 @@ To auto-fix the auto-fixable issues with both tools, execute this
 ```bash
 npm run format
 ```
+
 You can run the checkers and fixers separately.
 
 Checking with ESLint
