@@ -2,21 +2,15 @@
 /.idea
 /.vscode
 
-## system files
-.DS_Store
-
 ## npm
 /node_modules/
 /npm-debug.log
 
 ## testing
 /coverage/
-/.nyc_output/
 
 ## temp folders
 /.tmp/
 
 # build
-/_site/
 /dist/
-/out-tsc/

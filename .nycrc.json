@@ -1,0 +1,7 @@
+{
+  "all": true,
+  "check-coverage": true,
+  "reporter": ["html", "text-summary"],
+  "include": ["src/**"],
+  "lines": 45
+}

@@ -1,8 +1,21 @@
 version: 2.1
 orbs:
-  node: circleci/node@3.0.0
+  cypress: cypress-io/cypress@1
 workflows:
-  node-tests:
+  build:
     jobs:
-      - node/test
+      - cypress/install:
+          name: Install
+          post-steps:
+            - run:
+                name: Check formatting styles
+                command: npm run linter
 
+      - cypress/run:
+          name: Electron test
+          command: npm run cypress:all
+          requires:
+            - Install
+          start: npm run start:test
+          wait-on: 'http://localhost:8000'
+          no-workspace: true
