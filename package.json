@@ -1,4 +1,10 @@
 {
+  "name": "truco-live",
+  "version": "0.0.1",
+  "repository": "https://github.com/adpinola/truco-live",
+  "description": "WebRTC Truco - Play it, for real",
+  "author": "adpinola",
+  "license": "ISC",
   "scripts": {
     "lint:eslint": "eslint",
     "format:eslint": "eslint --fix",
@@ -11,6 +17,13 @@
     "start:test": "es-dev-server",
     "cypress:test": "nyc cypress open",
     "cypress:all": "nyc cypress run --headless"
+  },
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.5.0",
+    "lit-element": "^2.0.1",
+    "lit-html": "^1.0.0",
+    "regenerator-runtime": "^0.13.7",
+    "webrtc-adapter": "^7.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -53,23 +66,6 @@
       "@open-wc/eslint-config",
       "eslint-config-prettier"
     ]
-  },
-  "prettier": {
-    "singleQuote": true,
-    "arrowParens": "avoid"
-  },
-  "name": "nta-app",
-  "version": "0.0.0",
-  "repository": "https://github.com/southworks/project-ficus",
-  "description": "Webcomponent nta-app following open-wc recommendations",
-  "author": "SOUTHWORKS",
-  "license": "ISC",
-  "dependencies": {
-    "@webcomponents/webcomponentsjs": "^2.5.0",
-    "lit-element": "^2.0.1",
-    "lit-html": "^1.0.0",
-    "regenerator-runtime": "^0.13.7",
-    "webrtc-adapter": "^7.7.0"
   },
   "browserslist": [
     "since 2017-06"

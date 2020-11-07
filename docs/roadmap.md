@@ -3,8 +3,9 @@
 
 | Week | Feature | Actual Status |
 |:----:|---------|:-------------:|
-|1| Create Lit-Element Project Structure | TODO
-|1| Configure a free CI/CD environment   | TODO
+|1| Create Lit-Element Project Structure | DONE
+|1| Configure a free CI/CD environment   | DONE
+|1| Configure Testing framework | DONE
 |2| Landing Page | TODO
 |3| Media Device selection component | TODO
 |4| Media Device selection functionality | TODO
