@@ -1,4 +1,4 @@
-# Truco Live
+# Truco Live - [![adpinola](https://circleci.com/gh/adpinola/truco-live.svg?style=svg)](https://app.circleci.com/pipelines/github/adpinola/truco-live?branch=main)
 
 WebRTC implementation to play truco for real, directly on your browser.
 
