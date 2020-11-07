@@ -3,33 +3,24 @@ version: 2
 jobs:
   prebuild:
     docker:
-    - image: cimg/node:13.11.0
+    - image: cypress/base:10
+      environment:
+      TERM: xterm
     steps:
     - checkout
-    - run:
-        command: |
-          if [ ! -f "package.json" ]; then
-            echo "---"
-            echo "Unable to find your package.json file. Did you forget to set the app-dir parameter?"
-            echo "---"
-            echo "Current directory: $(pwd)"
-            echo "List directory: "
-            ls
-            exit 1
-          fi
-        name: Checking for package.json.
-        working_directory: ~/project
     - restore_cache:
         keys:
-        - node-deps-v1-{{ .Branch }}-{{ checksum "~/project/package-lock.json" }}
+          - v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
+          - v1-deps-{{ .Branch }}
+          - v1-deps
     - run:
-        command: "if [[ ! -z \"\" ]]; then\n  echo \"Running override package installation command:\"\n  \nelse\n  npm ci\nfi\n"
         name: Installing NPM packages
+        command: npm ci
         working_directory: ~/project
     - save_cache:
         key: node-deps-v1-{{ .Branch }}-{{ checksum "~/project/package-lock.json" }}
         paths:
-        - ~/.npm
+          - ~/.npm
     - run:
         command: npm run linter
         name: Checking formatting styles...
