@@ -1,8 +1,18 @@
+const { wrapRollupPlugin } = require('es-dev-server-rollup');
+const commonjs = require('@rollup/plugin-commonjs');
+const replace = require('@rollup/plugin-replace');
+const litcss = require('es-dev-server-import-css');
+const envVariables = require('./.env');
+
 module.exports = {
-  port: 8080,
+  port: 8000,
   watch: true,
   nodeResolve: true,
   appIndex: 'index.html',
-  plugins: [],
-  moduleDirs: ['node_modules'],
+  plugins: [
+    wrapRollupPlugin(commonjs()),
+    wrapRollupPlugin(replace(envVariables)),
+    litcss(),
+  ],
+  babel: true,
 };

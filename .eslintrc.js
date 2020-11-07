@@ -5,8 +5,10 @@ module.exports = {
   },
   parserOptions: {
     sourceType: 'module',
+    ecmaVersion: 11,
   },
   rules: {
     'linebreak-style': 0,
   },
+  ignorePatterns: ['lib/**'],
 };

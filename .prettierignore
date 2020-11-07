@@ -8,3 +8,9 @@
 
 ## testing
 /coverage/
+
+## temp folders
+/.tmp/
+
+# build
+/dist/

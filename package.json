@@ -1,8 +1,4 @@
 {
-  "name": "truco-live",
-  "version": "1.0.0",
-  "description": "WebRTC Truco - Play it, for real.",
-  "main": "index.js",
   "scripts": {
     "lint:eslint": "eslint",
     "format:eslint": "eslint --fix",
@@ -10,29 +6,72 @@
     "format:prettier": "prettier \"**/*.js\" --write",
     "linter": "npm run lint:eslint & npm run lint:prettier",
     "format": "npm run format:eslint && npm run format:prettier",
-    "test": "jest",
-    "start": "es-dev-server --open"
+    "build": "rimraf dist && rollup -c",
+    "start": "es-dev-server --open",
+    "start:test": "es-dev-server",
+    "cypress:test": "nyc cypress open",
+    "cypress:all": "nyc cypress run --headless"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/adpinola/truco-live.git"
-  },
-  "author": "adpinola",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/adpinola/truco-live/issues"
-  },
-  "homepage": "https://github.com/adpinola/truco-live#readme",
   "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@cypress/code-coverage": "^3.8.3",
+    "@open-wc/building-rollup": "^1.9.4",
+    "@open-wc/eslint-config": "^2.0.0",
     "@open-wc/testing": "^2.5.32",
-    "@testing-library/jest-dom": "^5.11.5",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "@rollup/plugin-replace": "^2.3.4",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-istanbul": "^6.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^5.0.1",
+    "cypress": "^5.5.0",
+    "chai": "^4.2.0",
+    "deepmerge": "^4.2.2",
     "es-dev-server": "^1.57.8",
+    "es-dev-server-import-css": "^2.1.0",
+    "es-dev-server-rollup": "0.0.8",
     "eslint": "^7.12.1",
-    "jest": "^26.6.2",
-    "lit-html": "^1.3.0",
-    "prettier": "^2.1.2"
+    "eslint-config-prettier": "^6.15.0",
+    "fetch-mock": "^9.10.7",
+    "istanbul-lib-coverage": "^3.0.0",
+    "lint-staged": "^10.5.1",
+    "lodash": "^4.17.20",
+    "nyc": "^15.1.0",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.33.1",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-lit-css": "^2.1.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-uglify": "^6.0.4"
   },
+  "eslintConfig": {
+    "extends": [
+      "@open-wc/eslint-config",
+      "eslint-config-prettier"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "arrowParens": "avoid"
+  },
+  "name": "nta-app",
+  "version": "0.0.0",
+  "repository": "https://github.com/southworks/project-ficus",
+  "description": "Webcomponent nta-app following open-wc recommendations",
+  "author": "SOUTHWORKS",
+  "license": "ISC",
   "dependencies": {
-    "lit-element": "^2.4.0"
-  }
+    "@webcomponents/webcomponentsjs": "^2.5.0",
+    "lit-element": "^2.0.1",
+    "lit-html": "^1.0.0",
+    "regenerator-runtime": "^0.13.7",
+    "webrtc-adapter": "^7.7.0"
+  },
+  "browserslist": [
+    "since 2017-06"
+  ]
 }
