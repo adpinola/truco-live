@@ -4,8 +4,6 @@ orbs:
 workflows:
   build:
     jobs:
-      # first, run a single job to install dependencies and Cypress
-      # and perform a few more small steps like linting
       - cypress/install:
           name: Install
           post-steps:
@@ -13,15 +11,11 @@ workflows:
                 name: Check formatting styles
                 command: npm run linter
 
-      # reuse the workspace from the install job
-      # to run end-to-end tests in Electron browser
       - cypress/run:
           name: Electron test
           command: npm run cypress:all
           requires:
             - Install
-          install-command: echo 'Nothing to install in this job'
-          # to run tests, we need to start the web application
           start: npm run start:test
           wait-on: 'http://localhost:8000'
           no-workspace: true
