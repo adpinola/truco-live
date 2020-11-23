@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
-    "@cypress/code-coverage": "^3.8.3",
+    "@cypress/code-coverage": "^3.8.4",
     "@open-wc/building-rollup": "^1.9.4",
     "@open-wc/eslint-config": "^2.0.0",
     "@open-wc/testing": "^2.5.32",
