@@ -1,4 +1,6 @@
-import { LitElement, html, css } from 'lit-element';
+import { LitElement, html } from 'lit-element';
+import { AppStyles } from './styles/AppStyles';
+import './components/LandingPage/LandingPage';
 
 export class TrucoLive extends LitElement {
   static get properties() {
@@ -8,19 +10,7 @@ export class TrucoLive extends LitElement {
   }
 
   static get styles() {
-    return css`
-      #main {
-        min-height: 100vh;
-        position: relative;
-        flex: auto;
-        background-color: #e08181;
-      }
-
-      h1 {
-        margin: 0;
-        padding: 0;
-      }
-    `;
+    return [AppStyles];
   }
 
   constructor() {
@@ -30,9 +20,13 @@ export class TrucoLive extends LitElement {
 
   render() {
     return html`
-      <div id="main">
-        <h1>Truco Live</h1>
+      <div class="app-container">
+        <landing-page></landing-page>
       </div>
     `;
+  }
+
+  handleClick(e) {
+    console.log(`${e.detail.log}`);
   }
 }
