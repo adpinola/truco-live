@@ -27,7 +27,7 @@
     "webrtc-adapter": "^7.7.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9",
+    "@babel/core": "^7.12.10",
     "@cypress/code-coverage": "^3.8.5",
     "@open-wc/building-rollup": "^1.9.4",
     "@open-wc/eslint-config": "^2.0.0",
