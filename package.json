@@ -44,7 +44,7 @@
     "cypress": "^6.3.0",
     "chai": "^4.2.0",
     "deepmerge": "^4.2.2",
-    "es-dev-server": "^2.0.2",
+    "es-dev-server": "^2.1.0",
     "es-dev-server-import-css": "^2.1.0",
     "es-dev-server-rollup": "0.0.8",
     "eslint": "^7.18.0",
