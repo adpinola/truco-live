@@ -62,7 +62,9 @@ export class CardTl extends LitElement {
       );
     } else {
       let size = this.iconSizeSelector();
+      let index=0;
       for (let index = 0; index < this.value; index++) {
+        console.log(index);
         icons.push(
           html`<fa-icon
             class="${suitIconTranslation[this.suit]}"

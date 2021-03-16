@@ -44,10 +44,13 @@ export class ButtonTl extends LitElement {
   }
 
   clickHandler() {
+    var testvar;
     const buttonElement = this.shadowRoot.querySelector('button');
     buttonElement.classList.add('raise-button');
     setTimeout(() => {
       buttonElement.classList.remove('raise-button');
+      buttonElement.classList.remove('raise-button');
+      console.log('log');
     }, 200);
     const clickEvent = new CustomEvent('ButtonTl:Click', {
       detail: {
