@@ -27,6 +27,7 @@ export class TrucoLive extends LitElement {
   }
 
   handleClick(e) {
+    console.log('hola');
     console.log(`${e.detail.log}`);
   }
 }
